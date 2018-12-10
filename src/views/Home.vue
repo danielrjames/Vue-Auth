@@ -1,18 +1,25 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <app-home-public v-if="!auth"></app-home-public>
+    <app-home-auth v-if="auth"></app-home-auth>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+  import HomePublic from '../components/home/HomePublic.vue';
+  import HomeAuth from '../components/home/HomeAuth.vue';
+  import { mapGetters } from 'vuex';
 
-export default {
-  name: 'home',
-  components: {
-    HelloWorld
-  }
-}
+  export default {
+    name: 'home',
+    components: {
+      appHomePublic: HomePublic,
+      appHomeAuth: HomeAuth
+    },
+    computed: {
+      ...mapGetters({
+        auth: 'authStatus'
+      })
+    }
+  };
 </script>
