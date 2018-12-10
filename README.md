@@ -1,3 +1,3 @@
 # vue-auth
 
-This is a sample Vue Spa that utilizes Vuex for Auth
+This is a sample Vue Spa that uses Vuex for authentication.
