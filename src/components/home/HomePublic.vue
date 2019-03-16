@@ -11,6 +11,24 @@
 
   export default {
     name: 'homePublic',
+    props: {
+      title: {
+        type: String,
+        default: 'Vue-Auth Home Page'
+      }
+    },
+    data() {
+      return {
+        description: 'Welocme to the Public Page'
+      };
+    },
+    metaInfo() {
+      return {
+        title: this.title,
+        titleTemplate: '%s | One stop shop for Vue Authentication',
+        meta: [{ vmid: 'description', name: 'description', content: this.description }]
+      };
+    },
     components: {
       HelloWorld
     },

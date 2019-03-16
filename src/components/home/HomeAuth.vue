@@ -5,3 +5,26 @@
     </div>
   </div>
 </template>
+
+<script>
+  export default {
+    props: {
+      title: {
+        type: String,
+        default: 'Vue-Auth Home Page'
+      }
+    },
+    data() {
+      return {
+        description: 'You are logged in'
+      };
+    },
+    metaInfo() {
+      return {
+        title: this.title,
+        titleTemplate: null,
+        meta: [{ vmid: 'description', name: 'description', content: this.description }]
+      };
+    }
+  };
+</script>

@@ -104,6 +104,12 @@
         touchValidation: false
       };
     },
+    metaInfo() {
+      return {
+        title: 'Register',
+        meta: [{ vmid: 'description', name: 'description', content: 'This is the Register page' }]
+      };
+    },
     components: {
       appTextInput: TextInput,
       appEmailInput: EmailInput,

@@ -76,6 +76,12 @@
         touchValidation: false
       };
     },
+    metaInfo() {
+      return {
+        title: 'Login',
+        meta: [{ vmid: 'description', name: 'description', content: 'This is the login page' }]
+      };
+    },
     components: {
       appEmailInput: EmailInput,
       appPasswordInput: PasswordInput

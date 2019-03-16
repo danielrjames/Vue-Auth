@@ -18,6 +18,12 @@
         error: false
       };
     },
+    metaInfo() {
+      return {
+        title: 'My Account',
+        meta: [{ vmid: 'description', name: 'description', content: 'This is the account page' }]
+      };
+    },
     beforeMount() {
       this.fetchData();
     },

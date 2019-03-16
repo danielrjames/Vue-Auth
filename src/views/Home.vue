@@ -1,7 +1,7 @@
 <template>
   <div>
-    <app-home-public v-if="!auth"></app-home-public>
-    <app-home-auth v-if="auth"></app-home-auth>
+    <app-home-public title="Vue-Auth Home Page" v-if="!auth"></app-home-public>
+    <app-home-auth title="Welcome Back!" v-if="auth"></app-home-auth>
   </div>
 </template>
 
@@ -12,6 +12,11 @@
 
   export default {
     name: 'home',
+    data() {
+      return {
+        title: ''
+      };
+    },
     components: {
       appHomePublic: HomePublic,
       appHomeAuth: HomeAuth

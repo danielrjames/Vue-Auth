@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import Meta from 'vue-meta';
 import store from './store';
 import Home from './views/Home.vue';
 
 Vue.use(Router);
-
-const APP_NAME = ' | Vue-Auth';
+Vue.use(Meta);
 
 const router = new Router({
   mode: 'history',
@@ -15,33 +15,26 @@ const router = new Router({
       path: '/',
       name: 'home',
       component: Home,
-      meta: {
-        title: 'Vue-Auth | Vue Auth Solution'
-      }
+      meta: {}
     },
     {
       path: '/about',
       name: 'about',
       component: () => import('./views/About.vue'),
-      meta: {
-        title: 'About' + APP_NAME
-      }
+      meta: {}
     },
     {
       path: '/contact',
       name: 'contact',
       component: () => import('./views/Contact.vue'),
-      meta: {
-        title: 'Contact' + APP_NAME
-      }
+      meta: {}
     },
     {
       path: '/register',
       name: 'register',
       component: () => import('./views/Register.vue'),
       meta: {
-        requiresAnon: true,
-        title: 'Register' + APP_NAME
+        requiresAnon: true
       }
     },
     {
@@ -49,8 +42,7 @@ const router = new Router({
       name: 'login',
       component: () => import('./views/Login.vue'),
       meta: {
-        requiresAnon: true,
-        title: 'Login' + APP_NAME
+        requiresAnon: true
       }
     },
     {
@@ -58,8 +50,7 @@ const router = new Router({
       name: 'account',
       component: () => import('./views/Account.vue'),
       meta: {
-        requiresAuth: true,
-        title: 'Account' + APP_NAME
+        requiresAuth: true
       }
     }
   ]

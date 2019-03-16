@@ -11,12 +11,23 @@
   import Nav from './components/nav/Nav.vue';
 
   export default {
+    // metaInfo: {
+    //   // if no subcomponents specify a metaInfo.title, this title will be used
+    //   title: 'Default Title',
+    //   // all titles will be injected into this template
+    //   titleTemplate: '%s | My Awesome Webapp'
+    // },
+    metaInfo() {
+      return {
+        // if no subcomponents specify a metaInfo.title, this title will be used
+        title: 'Default Title',
+        // all titles will be injected into this template
+        titleTemplate: '%s | Vue-Auth'
+      };
+    },
     components: {
       appNav: Nav
     }
-    // created() {
-    //   this.$store.dispatch('checkTokens');
-    // }
   };
 </script>
 
